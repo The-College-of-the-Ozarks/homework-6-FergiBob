@@ -51,7 +51,7 @@ while True:
     elif menuopt == '2':
         print(f'\n\nItem                                     Price\n')
         for key in list(SellDict):
-            print(f'{str(key):40}${str(BuyDict[key])}')
+            print(f'{str(key):40}${str(SellDict[key])}')
         input('\nPress enter to continue')
 
     elif menuopt == '3':
