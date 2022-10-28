@@ -45,7 +45,7 @@ while True:
     if menuopt == '1':
         print(f'\n\nItem                                     Price\n')
         for key in list(BuyDict):
-            print(f'{str(key).strip:40}${str(BuyDict[key]).strip}')
+            print(f'{str(key):40}${str(BuyDict[key])}')
         input('\nPress enter to continue')
 
     elif menuopt == '2':
@@ -56,23 +56,25 @@ while True:
 
     elif menuopt == '3':
         buy = input('\n\nWhat would you like to buy?  ')
-        for key in list(BuyDict):
-            if key == buy:
-                cost = int(str(BuyDict[key]))
-                profit += cost
-                BuyDict.pop(key)
-            else:
-                print('\nInvalid item\n\n')
+        if buy in list(BuyDict):    
+            for key in list(BuyDict):
+                if key == buy:
+                    cost = int((BuyDict[key]))
+                    profit += cost
+                    BuyDict.pop(key)
+        else:
+            print('\nInvalid item\n')        
     
     elif menuopt == '4':
         sell = input('\n\nWhat would you like to sell?  ')
-        for key in list(SellDict):
-            if key == sell:
-                cost = int(str(BuyDict[key]))
-                profit -= cost
-                SellDict.pop(key)
-            else:
-                print('\nInvalid item\n\n')
+        if sell in list(SellDict):    
+            for key in list(SellDict):
+                if key == sell:
+                    cost = int((SellDict[key]))
+                    profit -= cost
+                    SellDict.pop(key)
+        else:
+            print('\nInvalid item\n')    
 
     elif menuopt == '5':
         newItem = input('\n\nPlease enter the item name and its price seperated by a comma: ')
