@@ -45,7 +45,7 @@ while True:
     if menuopt == '1':
         print(f'\n\nItem                                     Price\n')
         for key in list(BuyDict):
-            print(f'{str(key):40}${str(BuyDict[key])}')
+            print(f'{str(key).strip:40}${str(BuyDict[key]).strip}')
         input('\nPress enter to continue')
 
     elif menuopt == '2':
@@ -80,10 +80,10 @@ while True:
         while True:
             whichList = input('\nWould you like to add it to the list of items to (buy) or (sell)?').lower()
             if whichList == 'buy':
-                BuyDict[newItem[0].strip] = newItem[1].strip
+                BuyDict[newItem[0]] = newItem[1]
                 break
             elif whichList == 'sell':
-                SellDict[newItem[0].strip] = newItem[1].strip
+                SellDict[newItem[0]] = newItem[1]
                 break
             else:
                 print('\nInvalid list name\n')
