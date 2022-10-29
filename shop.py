@@ -59,7 +59,7 @@ while True:
         if buy in list(BuyDict):    
             for key in list(BuyDict):
                 if key == buy:
-                    cost = int((BuyDict[key]))
+                    cost = float((BuyDict[key]))
                     profit += cost
                     BuyDict.pop(key)
         else:
@@ -70,7 +70,7 @@ while True:
         if sell in list(SellDict):    
             for key in list(SellDict):
                 if key == sell:
-                    cost = int((SellDict[key]))
+                    cost = float((SellDict[key]))
                     profit -= cost
                     SellDict.pop(key)
         else:
